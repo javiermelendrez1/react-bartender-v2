@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import SearchIcon from '@mui/icons-material/Search';
-const SearchBar = () => {
+const SearchBar = ({setHome}) => {
     //created a state for searched drink name 
     const [drink, setDrink] = useState(''); //initially it is an empty string 
     //add a listener to the text input 
@@ -15,8 +15,9 @@ const SearchBar = () => {
         e.preventDefault();
         //call the api to search drinks
         //empty out text string
+        setDrink('');
         //set home state to false 
-
+        setHome(false);
     }
     return(
         <form onSubmit={handleSubmit}>
