@@ -4,15 +4,16 @@ import Grid from './components/Grid/Grid';
 import HeroImage from './components/HeroImage/HeroImage';
 import NavBar from './components/NavBar/NavBar';
 import SearchBar from './components/SearchBar/SearchBar';
+import { Route, Routes } from 'react-router-dom';
+import Home from './components/Home/Home';
 function App() {
-  //create a home state
-  const [home, setHome] = useState(true); //this is state is to know if on the home screen
   return (
     <div className="App">
-      <NavBar/>
-      {home ? <HeroImage /> : null}
-      <SearchBar setHome={setHome}/>
-      <Grid/>
+            <NavBar/>
+      <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/search" element={<Grid />} />
+      </Routes>
     </div>
   );
 }
