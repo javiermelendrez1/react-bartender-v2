@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import SearchIcon from '@mui/icons-material/Search';
+import Drink from '../Drink/Drink';
 const Grid = () => {
     return (
         <Box
@@ -11,7 +12,12 @@ const Grid = () => {
             gridGap: '2rem',
         }}
         >
-            
+            <Drink/>
+            <Drink/>
+            <Drink/>
+            <Drink/>
+
+
         </Box>
     );
 

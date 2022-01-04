@@ -6,9 +6,9 @@ import SearchBar from './components/SearchBar/SearchBar';
 function App() {
   return (
     <div className="App">
-      {/* <NavBar/>
+      <NavBar/>
       <HeroImage />
-      <SearchBar/> */}
+      <SearchBar/>
       <Grid/>
     </div>
   );
