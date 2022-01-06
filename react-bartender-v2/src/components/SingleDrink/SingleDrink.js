@@ -29,17 +29,19 @@ const SingleDrink = () => {
     return (
         <Container maxWidth="sm">
         <Box sx={{ 
-        bgcolor: '#cfe8fc',
+        
         height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
+        marginTop: '2rem',
+        marginBottom: '2rem',
       }}>
-        <img src={drink.strDrinkThumb} alt={drink.strDrink}/>
-        <Typography variant="subtitle1" gutterBottom component="div">
+        <img src={drink.strDrinkThumb} alt={drink.strDrink}
+        width='100%' style={{objectFit: 'cover'}}
+        />
+        <div>
+        <Typography variant="h1" gutterBottom component="div">
         {drink.strDrink}
       </Typography>
-      <Typography variant="subtitle2" gutterBottom component="div" align='left'>
+      <Typography variant="h2" gutterBottom component="div" align='left'>
       Ingredients
       </Typography>
       <Typography variant="body1" gutterBottom align='left'>
@@ -62,13 +64,15 @@ const SingleDrink = () => {
 
       </Stack>
       </Typography>
-      <Typography variant="subtitle2" gutterBottom component="div" align='left'>
+        </div>
+
+      <Typography variant="h2" gutterBottom component="div" align='left'>
       Glass
       </Typography>
       <Typography variant="body1" gutterBottom align='left'> 
         {drink.strGlass}
       </Typography>
-      <Typography variant="subtitle2" gutterBottom component="div" align='left'>
+      <Typography variant="h2" gutterBottom component="div" align='left'>
       Instructions
       </Typography>
       <Typography variant="body1" gutterBottom align='left'>
