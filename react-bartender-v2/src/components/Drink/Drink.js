@@ -14,7 +14,7 @@ const Drink = ({drink}) => {
     navigate(`/drink/${drink.strDrink}`);
   }
     return(
-        <Card sx={{ minWidth: 275 }} key={drink.strDrink}>
+        <Card sx={{ minWidth: 275}} key={drink.strDrink}>
         <CardContent>
         <CardMedia
         component="img"

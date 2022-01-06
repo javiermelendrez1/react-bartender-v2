@@ -4,6 +4,8 @@ import Box from '@mui/material/Box';
 import SearchIcon from '@mui/icons-material/Search';
 import Drink from '../Drink/Drink';
 import axios from 'axios';
+import Container from '@mui/material/Container';
+
 const Grid = () => {
     //save the parameter path
     const path = (window.location.pathname).split('/')[2];
@@ -26,11 +28,14 @@ const Grid = () => {
         fetchAPI();
     },[])    
     return (
+        <Container maxWidth="lg">
         <Box
         sx={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-            gridGap: '2rem',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+            rowGap: '3rem',
+            columnGap: '4rem',
+            marginTop: '3rem',
         }}
         >
         {
@@ -41,6 +46,7 @@ const Grid = () => {
             })
         }
         </Box>
+        </Container>
     );
 
 };
