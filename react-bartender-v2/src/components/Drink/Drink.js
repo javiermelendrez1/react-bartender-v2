@@ -7,22 +7,29 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 import paloma from '../../images/paloma.jpeg';
-const Drink = () => {
+import { useNavigate } from 'react-router-dom';
+const Drink = ({drink}) => {
+  let navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/drink/${drink.strDrink}`);
+  }
     return(
-        <Card sx={{ minWidth: 275 }}>
+        <Card sx={{ minWidth: 275 }} key={drink.strDrink}>
         <CardContent>
         <CardMedia
         component="img"
         height="140"
-        image={paloma}
+        image={drink.strDrinkThumb}
         alt="green iguana"
       />
           <Typography variant="body2">
-            Paloma
+            {drink.strDrink}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Learn More</Button>
+          <Button size="small"
+          onClick={handleClick}
+          >Learn More</Button>
         </CardActions>
       </Card>
     );

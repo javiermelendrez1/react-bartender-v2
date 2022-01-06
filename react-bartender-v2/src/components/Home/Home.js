@@ -1,11 +1,11 @@
 import React from 'react';
 import HeroImage from '../HeroImage/HeroImage';
 import SearchBar from '../SearchBar/SearchBar';
-const Home = () => {
+const Home = ({setSearch}) => {
     return(
         <div>
         <HeroImage/>
-        <SearchBar/>
+        <SearchBar setSearch={setSearch}/>
         </div>
 
     );
