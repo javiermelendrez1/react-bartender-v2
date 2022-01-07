@@ -7,6 +7,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 import { Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
 import SingleDrink from './components/SingleDrink/SingleDrink';
+import Footer from './components/Footer/Footer';
 function App() {
   // const Context = createContext('');
   const [search, setSearch] = useState([]);
@@ -20,7 +21,7 @@ function App() {
       <Route path='/drink/:drinkid' element={<SingleDrink singleDrink={singleDrink} />} />
 
       </Routes>
-
+      <Footer />
     </div>
   );
 }

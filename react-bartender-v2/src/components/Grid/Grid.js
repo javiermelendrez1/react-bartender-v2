@@ -28,7 +28,7 @@ const Grid = () => {
         fetchAPI();
     },[])    
     return (
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" sx={{height: '100vh'}}>
         <Box
         sx={{
             display: 'grid',
@@ -36,6 +36,7 @@ const Grid = () => {
             rowGap: '3rem',
             columnGap: '4rem',
             marginTop: '3rem',
+            marginBottom: '3rem',
         }}
         >
         {

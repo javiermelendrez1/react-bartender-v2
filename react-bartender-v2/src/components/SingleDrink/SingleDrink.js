@@ -5,6 +5,15 @@ import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import axios from 'axios';
 const SingleDrink = () => {
+  const h1 = {
+    fontSize: '3rem',
+  }
+  const h2 = {
+    fontSize: '2rem',
+  }
+  const body1 = {
+    fontSize: '1rem',
+  }
     //for the drink doing the same thing 
     const path = (window.location.pathname).split('/')[2];
     const x = path.replace('%20',' ');
@@ -30,7 +39,6 @@ const SingleDrink = () => {
         <Container maxWidth="sm">
         <Box sx={{ 
         
-        height: '100vh',
         marginTop: '2rem',
         marginBottom: '2rem',
       }}>
@@ -38,13 +46,13 @@ const SingleDrink = () => {
         width='100%' style={{objectFit: 'cover'}}
         />
         <div>
-        <Typography variant="h1" gutterBottom component="div">
+        <Typography variant="h1" gutterBottom component="div" sx={h1}>
         {drink.strDrink}
       </Typography>
-      <Typography variant="h2" gutterBottom component="div" align='left'>
+      <Typography variant="h2" gutterBottom component="div" align='left' sx={h2}>
       Ingredients
       </Typography>
-      <Typography variant="body1" gutterBottom align='left'>
+      <Typography variant="body1" gutterBottom align='left' sx={body1}>
       <Stack spacing={1}>
           <div>{drink.strMeasure1} {drink.strIngredient1}</div>
           <div>{drink.strMeasure2} {drink.strIngredient2}</div>
@@ -66,16 +74,16 @@ const SingleDrink = () => {
       </Typography>
         </div>
 
-      <Typography variant="h2" gutterBottom component="div" align='left'>
+      <Typography variant="h2" gutterBottom component="div" align='left' sx={h2}>
       Glass
       </Typography>
-      <Typography variant="body1" gutterBottom align='left'> 
+      <Typography variant="body1" gutterBottom align='left' sx={body1}> 
         {drink.strGlass}
       </Typography>
-      <Typography variant="h2" gutterBottom component="div" align='left'>
+      <Typography variant="h2" gutterBottom component="div" align='left' sx={h2}>
       Instructions
       </Typography>
-      <Typography variant="body1" gutterBottom align='left'>
+      <Typography variant="body1" gutterBottom align='left' sx={body1}>
         {drink.strInstructions}
       </Typography>
         </Box>
