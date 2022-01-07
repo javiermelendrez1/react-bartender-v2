@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import Drink from '../Drink/Drink';
 import axios from 'axios';
 import Container from '@mui/material/Container';
+import SearchBar from '../SearchBar/SearchBar';
 
 const Grid = () => {
     //save the parameter path
@@ -26,9 +27,10 @@ const Grid = () => {
             }
         }
         fetchAPI();
-    },[])    
+    },[drinks])    
     return (
         <Container maxWidth="lg" sx={{height: '100vh'}}>
+        <SearchBar />
         <Box
         sx={{
             display: 'grid',
