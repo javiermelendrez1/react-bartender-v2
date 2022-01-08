@@ -5,7 +5,6 @@ import Typography from '@mui/material/Typography';
 const NotFound = () => {
     return(
         <div>
-            <Container maxWidth='lg' sx={{height: '100vh'}}>
             <Box sx={{
                 display: 'flex',
                 alignItems: 'center',
@@ -17,7 +16,6 @@ const NotFound = () => {
                     No results were found, please try searching for another drink.
                 </Typography>
             </Box>
-            </Container>
         </div>
     );
 }

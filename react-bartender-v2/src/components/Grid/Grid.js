@@ -6,31 +6,45 @@ import Drink from '../Drink/Drink';
 import axios from 'axios';
 import Container from '@mui/material/Container';
 import SearchBar from '../SearchBar/SearchBar';
+import NotFound from '../NotFound/NotFound';
 
-const Grid = () => {
+const Grid = ({search, setSearch}) => {
     //save the parameter path
     const path = (window.location.pathname).split('/')[2];
     //create a state for the drinks
     const[drinks,setDrinks] = useState([]); //empty object at first
+    //create a state to check if the response from the api fetch is null
+    const [isNull, setIsNull] = useState(false); // not null by default
     //create a useEffect to fetch the api when the page loads 
     useEffect(() => {
         //call for the api 
         const fetchAPI = async () => {
             try {
                 const res = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${path}`);
+                console.log(res);
+                //create a if statement that will check if the response if null
+                if(res.data.drinks == null) {
+                    setIsNull(true);
+
+                } else {
                 //set state 
+                setIsNull(false);
                 setDrinks(res.data.drinks);
-                console.log(drinks);
+                }
+
+                //console.log(drinks);
             } catch (err) {
                 //print out th error
                 console.log(err);
             }
         }
         fetchAPI();
-    },[drinks])    
+    },[search])
+
     return (
         <Container maxWidth="lg" sx={{height: '100vh'}}>
-        <SearchBar />
+        <SearchBar setSearch={setSearch}/>
+        {isNull ? <NotFound /> : 
         <Box
         sx={{
             display: 'grid',
@@ -49,6 +63,7 @@ const Grid = () => {
             })
         }
         </Box>
+        }
         </Container>
     );
 

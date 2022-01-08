@@ -11,14 +11,13 @@ import Footer from './components/Footer/Footer';
 function App() {
   // const Context = createContext('');
   const [search, setSearch] = useState([]);
-  const [singleDrink, setSingleDrink] = useState({});
   return (
     <div className="App">
       <NavBar/>
       <Routes>
       <Route path="/" element={<Home setSearch={setSearch}/>} />
-      <Route path="/search/:drinkid" element={<Grid search={search} setSingleDrink={setSingleDrink}/>} />
-      <Route path='/drink/:drinkid' element={<SingleDrink singleDrink={singleDrink} />} />
+      <Route path="/search/:drinkid" element={<Grid search={search} setSearch={setSearch}/>} />
+      <Route path='/drink/:drinkid' element={<SingleDrink />} />
 
       </Routes>
       <Footer />

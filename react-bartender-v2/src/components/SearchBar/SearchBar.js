@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from 'react-router-dom';
-const SearchBar = () => {
+const SearchBar = ({setSearch}) => {
     //created a state for searched drink name 
     const [drink, setDrink] = useState(''); //initially it is an empty string 
     //add a listener to the text input 
@@ -17,6 +17,7 @@ const SearchBar = () => {
     //create a function for the form submit 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setSearch(drink);
         //call the api to search drinks
         navigate(`/search/${drink}`);
         //empty out text string
@@ -35,6 +36,7 @@ const SearchBar = () => {
                 <TextField id="outlined-basic" label="Enter Cocktail" variant="outlined" 
                 value={drink}
                 onChange={handleDrinkChange}
+                required
                 />
                 <Button variant="text"
                 type='submit'
