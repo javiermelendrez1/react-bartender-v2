@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import axios from 'axios';
+import NotFound from '../NotFound/NotFound';
 const SingleDrink = () => {
   const h1 = {
     fontSize: '3rem',
@@ -20,14 +21,21 @@ const SingleDrink = () => {
     console.log(x);
     //create a state for the single drink
     const [drink, setDrink] = useState([]); //this will be just an empty array 
+    //create a state to check if the response from the api fetch is null
+    const [isNull, setIsNull] = useState(false); // not null by default
     //make a useEffect 
     useEffect(() => {
         //make api request
         const fetchAPI = async () => {
             try{
                 const res = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${x}`);
-                setDrink(res.data.drinks['0']);
-                //console.log(res.data.drinks['0']);
+                if(res.data.drinks == null){
+                  setIsNull(true);
+                }else {
+                  setIsNull(false);
+                  setDrink(res.data.drinks['0']);
+                }
+                
             } catch(err) {
                 console.log(err);
             }
@@ -37,6 +45,7 @@ const SingleDrink = () => {
     }, [])
     return (
         <Container maxWidth="sm">
+          {isNull ? <NotFound/> : 
         <Box sx={{ 
         
         marginTop: '2rem',
@@ -87,6 +96,7 @@ const SingleDrink = () => {
         {drink.strInstructions}
       </Typography>
         </Box>
+}
       </Container>
     );
 };
