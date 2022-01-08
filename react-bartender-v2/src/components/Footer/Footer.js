@@ -12,11 +12,12 @@ const Footer = () => {
     }
     return (
         <Box sx={{
-            display: 'flex',
-            justifyContent: 'center',
             height: '30px',
             backgroundColor: '#282c34',
-            
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
         }}>
             <Typography variant="body1" component="div" sx={footer}>
             Created by Javier Melendrez

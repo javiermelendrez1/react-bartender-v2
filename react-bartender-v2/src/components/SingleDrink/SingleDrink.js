@@ -44,7 +44,9 @@ const SingleDrink = () => {
         fetchAPI();
     }, [])
     return (
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" sx={{
+          minHeight: '100vh',
+        }}>
           {isNull ? <NotFound/> : 
         <Box sx={{ 
         

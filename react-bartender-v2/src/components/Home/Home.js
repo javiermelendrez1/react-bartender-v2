@@ -3,7 +3,9 @@ import HeroImage from '../HeroImage/HeroImage';
 import SearchBar from '../SearchBar/SearchBar';
 const Home = ({setSearch}) => {
     return(
-        <div>
+        <div style={{
+            height: '100vh'
+        }}>
         <HeroImage/>
         <SearchBar setSearch={setSearch}/>
         </div>

@@ -42,7 +42,7 @@ const Grid = ({search, setSearch}) => {
     },[search])
 
     return (
-        <Container maxWidth="lg" sx={{height: '100vh'}}>
+        <Container maxWidth="lg" sx={{minHeight: '100vh'}}>
         <SearchBar setSearch={setSearch}/>
         {isNull ? <NotFound /> : 
         <Box
