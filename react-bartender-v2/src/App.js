@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Grid from './components/Grid/Grid';
-import HeroImage from './components/HeroImage/HeroImage';
 import NavBar from './components/NavBar/NavBar';
-import SearchBar from './components/SearchBar/SearchBar';
 import { Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
 import SingleDrink from './components/SingleDrink/SingleDrink';
@@ -13,11 +11,11 @@ function App() {
   const [search, setSearch] = useState([]);
   return (
     <div className="App">
-      <NavBar/>
+      <NavBar />
       <Routes>
-      <Route path="/" element={<Home setSearch={setSearch}/>} />
-      <Route path="/search/:drinkid" element={<Grid search={search} setSearch={setSearch}/>} />
-      <Route path='/drink/:drinkid' element={<SingleDrink />} />
+        <Route path="/" element={<Home setSearch={setSearch} />} />
+        <Route path="/search/:drinkid" element={<Grid search={search} setSearch={setSearch} />} />
+        <Route path='/drink/:drinkid' element={<SingleDrink />} />
 
       </Routes>
       <Footer />

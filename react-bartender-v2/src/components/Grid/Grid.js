@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-import SearchIcon from '@mui/icons-material/Search';
 import Drink from '../Drink/Drink';
 import axios from 'axios';
 import Container from '@mui/material/Container';
@@ -21,7 +19,6 @@ const Grid = ({search, setSearch}) => {
         const fetchAPI = async () => {
             try {
                 const res = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${path}`);
-                console.log(res);
                 //create a if statement that will check if the response if null
                 if(res.data.drinks == null) {
                     setIsNull(true);

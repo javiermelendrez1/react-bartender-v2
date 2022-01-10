@@ -20,7 +20,7 @@ const Footer = () => {
             width: '100%',
         }}>
             <Typography variant="body1" component="div" sx={footer}>
-            Created by Javier Melendrez
+                Created by Javier Melendrez
             </Typography>
         </Box>
     );
