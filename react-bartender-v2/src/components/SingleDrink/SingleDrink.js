@@ -18,7 +18,6 @@ const SingleDrink = () => {
   //for the drink doing the same thing 
   const path = (window.location.pathname).split('/')[2];
   const x = path.replace('%20', ' ');
-  console.log(x);
   //create a state for the single drink
   const [drink, setDrink] = useState([]); //this will be just an empty array 
   //create a state to check if the response from the api fetch is null

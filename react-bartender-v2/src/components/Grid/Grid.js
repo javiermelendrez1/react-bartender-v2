@@ -55,7 +55,7 @@ const Grid = ({search, setSearch}) => {
         {
             drinks.map((drink) => {
                 return (
-                    <Drink drink={drink}/>
+                    <Drink drink={drink} key={drink.strDrink}/>
                 );
             })
         }
